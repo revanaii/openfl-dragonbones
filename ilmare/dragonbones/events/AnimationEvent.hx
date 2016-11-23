@@ -53,7 +53,7 @@ class AnimationEvent extends Event
 	 
 	public function get_armature():Armature
 	{
-		return target;
+		return cast target;
 	}
 	
 	/**

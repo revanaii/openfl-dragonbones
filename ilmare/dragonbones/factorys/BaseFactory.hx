@@ -384,7 +384,7 @@ class BaseFactory extends EventDispatcher
 		}
 		if(textureAtlas != null)
 		{
-			if(Math.isNaN(pivotX) || Math.isNaN(pivotY))
+//			if(Math.isNaN() || Math.isNaN(pivotY))
 			{
 				var skeletonData:SkeletonData = _skeletonDataDic.get(textureAtlasName);
 				if(skeletonData != null)
@@ -392,8 +392,10 @@ class BaseFactory extends EventDispatcher
 					var displayData:DisplayData = skeletonData.getDisplayData(textureName);
 					if(displayData != null)
 					{
-						pivotX = pivotX == Math.NaN ? displayData.pivotX : pivotX;
-						pivotY = pivotY == Math.NaN ? displayData.pivotY : pivotY;
+//						pivotX = pivotX == Math.NaN ? displayData.pivotX : pivotX;
+//						pivotY = pivotY == Math.NaN ? displayData.pivotY : pivotY;
+						if(pivotX == 0) pivotX = displayData.pivotX;
+                        if(pivotY == 0) pivotY = displayData.pivotY;
 					}
 				}
 			}
